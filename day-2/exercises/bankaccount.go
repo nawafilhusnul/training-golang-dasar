@@ -47,7 +47,7 @@ func NewBankAccount(accountNumber, owner string, initialBalance float64) (*BankA
 }
 
 // Deposit menambahkan uang ke account
-func (ba *BankAccount) Deposit(amount float64) error {
+func (ba BankAccount) Deposit(amount float64) error {
 	// IMPLEMENTASI DI SINI
 	if amount <= 0 {
 		return errors.New("amount harus lebih besar dari 0")
@@ -57,7 +57,7 @@ func (ba *BankAccount) Deposit(amount float64) error {
 }
 
 // Withdraw mengambil uang dari account
-func (ba *BankAccount) Withdraw(amount float64) error {
+func (ba BankAccount) Withdraw(amount float64) error {
 	// IMPLEMENTASI DI SINI
 	if amount <= 0 {
 		return errors.New("amount harus lebih besar dari 0")
@@ -76,7 +76,7 @@ func (ba BankAccount) GetBalance() float64 {
 }
 
 // Transfer mentransfer uang ke account lain
-func (ba *BankAccount) Transfer(to *BankAccount, amount float64) error {
+func (ba BankAccount) Transfer(to *BankAccount, amount float64) error {
 	// IMPLEMENTASI DI SINI
 	if to == nil {
 		return errors.New("target account tidak boleh nil")
