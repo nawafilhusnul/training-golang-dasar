@@ -50,4 +50,11 @@ func main() {
 	deletedIdx := 2
 	arr6 = append(arr6[:deletedIdx], arr6[deletedIdx+1:]...)
 	fmt.Println("value ", arr6, " len ", len(arr6), " cap ", cap(arr6))
+
+	var multiDimArr = [2][3]int{ // [] pertama untuk rows, [] kedua untuk colums
+		[3]int{1, 2, 3},
+		[3]int{1, 2, 3},
+	}
+
+	fmt.Println(multiDimArr)
 }
