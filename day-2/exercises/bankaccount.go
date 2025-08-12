@@ -1,4 +1,4 @@
-package main
+package exercises
 
 import (
 	"errors"
@@ -100,7 +100,7 @@ func (ba BankAccount) GetAccountInfo() string {
 		ba.AccountNumber, ba.Owner, ba.Balance)
 }
 
-func testBankAccount() {
+func estBankAccount() {
 	fmt.Println("TASK: Bank Account System")
 	acc1, _ := NewBankAccount("001", "Alice", 1000000)
 	acc2, _ := NewBankAccount("002", "Bob", 500000)

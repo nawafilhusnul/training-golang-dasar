@@ -2,21 +2,18 @@ package main
 
 import "fmt"
 
+// REVIEW POINTER
+
 func main() {
+	// deklarasi variable
 	var age int
 	fmt.Println(age)
 	fmt.Println(&age)
 
-	user1 := User{}
-	user1.SetName("Sentus")
+	// deklarasi pointer
+	var nama1 *string = new(string)
 
-	fmt.Println("harapannya sentus", user1.Name)
-}
-
-type User struct {
-	Name string
-}
-
-func (u *User) SetName(name string) {
-	u.Name = name
+	// inisialisasi pointer
+	*nama1 = "Sentus"
+	fmt.Println("nama 1 ", *nama1)
 }

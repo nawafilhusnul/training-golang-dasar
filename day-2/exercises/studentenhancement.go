@@ -1,4 +1,4 @@
-package main
+package exercises
 
 import (
 	"errors"
@@ -34,7 +34,7 @@ func (s *Student) AddGrade(grade int) error {
 	if grade < 0 || grade > 100 {
 		return errors.New("grade harus antara 0-100")
 	}
-
+	s.Grades = append(s.Grades, grade)
 	return nil
 }
 
@@ -50,6 +50,10 @@ func (s *Student) AddCourse(courseName string, grade float64) error {
 		return errors.New("grade harus antara 0-100")
 	}
 
+	if s.Courses == nil {
+		s.Courses = make(map[string]float64)
+	}
+	s.Courses[courseName] = grade
 	return nil
 }
 
@@ -58,7 +62,8 @@ func (s *Student) AddCourse(courseName string, grade float64) error {
 // Return: grade (float64), exists (bool)
 func (s Student) GetCourseGrade(courseName string) (float64, bool) {
 	// IMPLEMENTASI DI SINI
-	return 0, false
+	grade, exists := s.Courses[courseName]
+	return grade, exists
 }
 
 func testStudentEnhancement() {
